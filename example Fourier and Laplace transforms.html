@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Fourier and Laplace Transform Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #2C3E50;
+        }
+        p, li {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .example {
+            background-color: #F9F9F9;
+            border-left: 4px solid #2C3E50;
+            padding: 10px 20px;
+            margin: 10px 0;
+        }
+        code {
+            background-color: #E8E8E8;
+            padding: 2px 4px;
+            font-family: Consolas, "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Advanced Examples of Fourier and Laplace Transforms</h1>
+    
+    <h2>Fourier Transform Examples</h2>
+    
+    <div class="example">
+        <h3>Example 1: Fourier Transform of a Rectangular Pulse</h3>
+        <p>Given a rectangular pulse defined as:</p>
+        <p><code>f(t) = 1 for |t| &lt; T/2</code></p>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Use the definition of the Fourier transform: <code>F(ω) = ∫ f(t) e<sup>-jωt</sup> dt</code></li>
+            <li>Integrate over the pulse width: <code>F(ω) = ∫<sub>-T/2</sub><sup>T/2</sup> e<sup>-jωt</sup> dt</code></li>
+            <li>Solve the integral: <code>F(ω) = (2/ω) sin(ωT/2)</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 2: Fourier Transform of a Sine Wave</h3>
+        <p>Given a sine wave <code>f(t) = sin(ω<sub>0</sub>t)</code></p>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Use Euler's formula: <code>sin(ω<sub>0</sub>t) = (e<sup>jω<sub>0</sub>t</sup> - e<sup>-jω<sub>0</sub>t</sup>) / 2j</code></li>
+            <li>Apply the Fourier transform: <code>F(ω) = π[δ(ω - ω<sub>0</sub>) - δ(ω + ω<sub>0</sub>)] / 2j</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 3: Fourier Transform of an Exponential Decay</h3>
+        <p>Given <code>f(t) = e<sup>-at</sup> for t ≥ 0</code></p>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>F(ω) = ∫<sub>0</sub><sup>∞</sup> e<sup>-(a+jω)t</sup> dt</code></li>
+            <li>Solve the integral: <code>F(ω) = 1 / (a + jω)</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 4: Fourier Transform of a Gaussian Function</h3>
+        <p>Given <code>f(t) = e<sup>-at<sup>2</sup></sup></code></p>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Use the known result for Gaussian functions: <code>F(ω) = √(π/a) e<sup>-ω<sup>2</sup> / 4a</sup></code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 5: Fourier Transform of a Delta Function</h3>
+        <p>Given <code>f(t) = δ(t)</code></p>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Apply the Fourier transform definition: <code>F(ω) = ∫ δ(t) e<sup>-jωt</sup> dt</code></li>
+            <li>Result is: <code>F(ω) = 1</code></li>
+        </ol>
+    </div>
+    
+    <h2>Laplace Transform Examples</h2>
+    
+    <div class="example">
+        <h3>Example 1: Laplace Transform of <code>f(t) = e<sup>-at</sup></code></h3>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>L{e<sup>-at</sup>} = ∫<sub>0</sub><sup>∞</sup> e<sup>-(a+s)t</sup> dt</code></li>
+            <li>Solve the integral: <code>L{e<sup>-at</sup>} = 1 / (s + a)</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 2: Laplace Transform of <code>f(t) = t</code></h3>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>L{t} = ∫<sub>0</sub><sup>∞</sup> t e<sup>-st</sup> dt</code></li>
+            <li>Solve the integral using integration by parts: <code>L{t} = 1 / s<sup>2</sup></code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 3: Laplace Transform of <code>f(t) = sin(bt)</code></h3>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>L{sin(bt)} = ∫<sub>0</sub><sup>∞</sup> sin(bt) e<sup>-st</sup> dt</code></li>
+            <li>Use the known result: <code>L{sin(bt)} = b / (s<sup>2</sup> + b<sup>2</sup>)</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 4: Laplace Transform of <code>f(t) = cos(bt)</code></h3>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>L{cos(bt)} = ∫<sub>0</sub><sup>∞</sup> cos(bt) e<sup>-st</sup> dt</code></li>
+            <li>Use the known result: <code>L{cos(bt)} = s / (s<sup>2</sup> + b<sup>2</sup>)</code></li>
+        </ol>
+    </div>
+
+    <div class="example">
+        <h3>Example 5: Laplace Transform of <code>f(t) = t e<sup>-at</sup></code></h3>
+        <p>Step-by-step solution:</p>
+        <ol>
+            <li>Set up the integral: <code>L{t e<sup>-at</sup>} = ∫<sub>0</sub><sup>∞</sup> t e<sup>-(a+s)t</sup> dt</code></li>
+            <li>Solve using integration by parts: <code>L{t e<sup>-at</sup>} = 1 / (s + a)<sup>2</sup></code></li>
+        </ol>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>These examples illustrate the application of Fourier and Laplace transforms to various functions. Both transforms are integral tools in engineering and applied mathematics, useful for analyzing and solving complex problems in the time and frequency domains.</p>
+</body>
+</html>
